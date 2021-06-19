@@ -64,10 +64,7 @@ class StoreTasksCommand extends Command
     private function getTasks(): ?array
     {
         $tasksToMerge = [];
-        $providers = [
-            'Provider1',
-            'Provider2',
-        ];
+        $providers = ProviderFactory::getProviders();
         foreach ($providers as $provider) {
             $providerObj = ProviderFactory::create($provider);
             $tasksToMerge[] = $providerObj->getTransformedTasks($providerObj->fetchTasks());
