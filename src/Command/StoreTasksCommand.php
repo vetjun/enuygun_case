@@ -2,7 +2,6 @@
 
 namespace App\Command;
 
-use App\Entity\Developer;
 use App\Entity\Task;
 use App\Utils\Task\Factory\ProviderFactory;
 use Doctrine\DBAL\Exception;
