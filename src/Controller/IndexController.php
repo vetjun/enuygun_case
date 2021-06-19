@@ -17,6 +17,7 @@ class IndexController extends AbstractController
     public function index(TaskRepository $taskRepository, DeveloperRepository $developerRepository): Response
     {
         $tasks = $taskRepository->findAll();
-        return $this->render('index.html.twig', ['tasks' => $tasks]);
+        $developers = $developerRepository->findAll();
+        return $this->render('index.html.twig', ['tasks' => $tasks, 'developers' => $developers]);
     }
 }
